@@ -1,0 +1,24 @@
+$base-spacing: 1.5em !default;
+$alert-color: #fff6bf !default;
+$error-color: #fbe3e4 !default;
+$notice-color: #e5edf8 !default;
+$success-color: #e6efc2 !default;
+$message-border-radius: 5px !default;
+
+.status-message {
+  &.status-message--error {
+    @include flash($error-color);
+  }
+
+  &.status-message--status {
+    @include flash($success-color);
+  }
+
+  &.status-message--notice {
+    @include flash($notice-color);
+  }
+
+  &.status-message--warning {
+    @include flash($alert-color);
+  }
+}

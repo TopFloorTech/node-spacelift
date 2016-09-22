@@ -1,0 +1,97 @@
+$dark-gray: #333 !default;
+$light-gray: #D4D4D4 !default;
+$base-border-color: gainsboro !default;
+$base-line-height: 1.5em !default;
+$base-background-color: white !default;
+$base-spacing: 1.5em !default;
+$base-accent-color: #477DCA !default;
+$base-link-color: $base-accent-color !default;
+$base-font-color: $dark-gray !default;
+$medium-screen: em(640) !default;
+$large-screen: em(860) !default;
+$base-font-size: .8em !default;
+$gutter: 0 !default;
+
+$tab-link-color: $dark-gray !default;
+$tab-border: 1px solid $base-border-color !default;
+$tab-active-background: $base-background-color !default;
+$tab-inactive-color: $base-background-color !default;
+$tab-inactive-hover-color: silver !default;
+$tab-mode: $medium-screen !default;
+
+.local-tasks__item-list.local-tasks__item-list--tabs {
+  @include clearfix;
+  line-height: $base-line-height;
+  padding: 0;
+  margin: 5px 0;
+
+  .local-tasks--primary & {
+    border-bottom: $tab-border;
+  }
+}
+
+.local-tasks__item {
+  list-style: none;
+
+  .local-tasks--primary & {
+    border-top: $tab-border;
+
+    @include media($tab-mode) {
+      display: inline;
+    }
+  }
+
+  .local-tasks--secondary & {
+    float: left;
+    border-right: 1px solid $light-gray;
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+}
+
+.local-tasks__item a {
+  .local-tasks--primary & {
+    background-color: $tab-inactive-color;
+    border-top: $tab-border;
+    color: $tab-link-color;
+    display: block;
+    font-weight: 400;
+    padding: ($base-spacing / 2) $gutter;
+    text-decoration: none;
+
+    @include media($tab-mode) {
+      display: inline-block;
+      border-top: 0;
+    }
+
+    &.local-tasks__item--active {
+      border-bottom: 0;
+
+      @include media($tab-mode) {
+        border: $tab-border;
+        border-bottom-color: $tab-active-background;
+        margin-bottom: -1px;
+      }
+    }
+
+    &:hover {
+      color: $base-link-color;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .local-tasks--secondary & {
+    cursor: pointer;
+    display: inline-block;
+    font-size: $base-font-size;
+    font-weight: normal;
+    line-height: 1;
+    padding: 0.75em 1em;
+    width: 100%;
+  }
+}
