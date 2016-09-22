@@ -1,0 +1,40 @@
+$base-border-color: black !default;
+$base-border-style: solid !default;
+$base-border-width: 1px !default;
+$base-spacing: 0.5em !default;
+$base-border-radius: 0 !default;
+$message-border-radius: $base-border-radius !default;
+
+/*
+ * Border mixin for quickly defining borders on one or all sides
+ */
+@mixin border($color: $base-border-color, $style: $base-border-style, $width: $base-border-width, $side: 'all', $clear: false) {
+    @if $clear and $side != 'all' {
+        border: 0;
+    }
+
+    @if $side == 'all' {
+        border: $width $style $color;
+    } @else {
+        border-#{$side}: $width $style $color;
+    }
+}
+
+@mixin flash($color) {
+    background-color: $color;
+    color: darken($color, 60%);
+    display: block;
+    margin-bottom: $base-spacing / 2;
+    padding: $base-spacing / 2 $base-spacing / 2 $base-spacing / 2 50px;
+    border-radius: $message-border-radius;
+
+    a {
+        color: darken($color, 70%);
+        text-decoration: underline;
+
+        &:focus,
+        &:hover {
+            color: darken($color, 90%);
+        }
+    }
+}
