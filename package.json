@@ -1,0 +1,34 @@
+{
+  "name": "spacelift",
+  "version": "0.1.0",
+  "description": "A standalone companion module designed for use with the Spacelift family of themes.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TopFloorTech/node-spacelift"
+  },
+  "author": {
+    "name": "Ben McClure",
+    "email": "ben.mcclure@gmail.com",
+    "url": "http://www.topfloortech.com"
+  },
+  "files": [
+    "index.js",
+    "sass"
+  ],
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "keywords": [
+    "eyeglass-module",
+    "sass"
+  ],
+  "dependencies": {},
+  "devDependencies": {},
+  "eyeglass": {
+    "exports": false,
+    "name": "spacelift",
+    "needs": "*",
+    "sassDir": "sass"
+  }
+}
