@@ -1,0 +1,88 @@
+$base-font-color: black !default;
+$base-font-family: sans-serif !default;
+$base-font-size: 16 !default;
+$base-line-height: 1.4em !default;
+$heading-font-family: $base-font-family !default;
+$heading-line-height: $base-line-height !default;
+$small-spacing: 0.1em !default;
+$h1-font-size: 2.2em !default;
+$h2-font-size: 2.0em !default;
+$h3-font-size: 1.8em !default;
+$h4-font-size: 1.6em !default;
+$h5-font-size: 1.4em !default;
+$h6-font-size: 1.2em !default;
+$action-color: blue !default;
+$base-duration: 150ms !default;
+$base-timing: ease !default;
+$base-spacing: 1em !default;
+
+body {
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-feature-settings: "kern", "liga", "pnum";
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading-font-family;
+  line-height: $heading-line-height;
+  margin: 0 0 $small-spacing;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: $h1-font-size;
+}
+
+h2 {
+  font-size: $h2-font-size;
+}
+
+h3 {
+  font-size: $h3-font-size;
+}
+
+h4 {
+  font-size: $h4-font-size;
+}
+
+h5 {
+  font-size: $h5-font-size;
+}
+
+h6 {
+  font-size: $h6-font-size;
+}
+
+p {
+  margin: 0 0 $small-spacing;
+}
+
+a {
+  color: $action-color;
+  text-decoration: none;
+  transition: color $base-duration $base-timing;
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: shade($action-color, 25%);
+  }
+}
+
+hr {
+  @include border($side: bottom, $clear: true);
+  margin: $base-spacing 0;
+}
+
+img,
+picture {
+  margin: 0;
+  max-width: 100%;
+}
