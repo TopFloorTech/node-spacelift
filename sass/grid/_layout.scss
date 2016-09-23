@@ -4,17 +4,13 @@ $content-cols: 12 !default;
 $content-cols--one-sidebar: 8 !default;
 $content-cols--two-sidebars: 6 !default;
 
-.l_section {
-    .l_section__container {
+.l-Section {
+    .l-Section-container {
         @include outer-container;
     }
 }
 
-.outer-wrapper {
-    @include outer-container;
-}
-
-.l_sidebar {
+.l-Section--sidebar {
     .one-sidebar & {
         @include span-columns($sidebar-cols);
     }
@@ -24,7 +20,7 @@ $content-cols--two-sidebars: 6 !default;
     }
 }
 
-.l_content {
+.l-Section--content {
     .no-sidebars & {
         @include span-columns($content-cols);
     }
@@ -36,8 +32,4 @@ $content-cols--two-sidebars: 6 !default;
     .two-sidebars & {
         @include span-columns($content-cols--two-sidebars);
     }
-}
-
-.outer-wrapper {
-    @include outer-container;
 }

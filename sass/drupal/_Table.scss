@@ -1,0 +1,62 @@
+$darkGray: #333 !default;
+$lightGray: #DDD !default;
+$base-borderColor: gainsboro !default;
+$base-borderRadius: 3px !default;
+$base-backgroundColor: white !default;
+$base-lineHeight: 1.5em !default;
+$base-spacing: 1.5em !default;
+$base-fontColor: $darkGray !default;
+$base-accentColor: #477DCA !default;
+$base-linkColor: $base-accentColor !default;
+$mediumScreen: em(640) !default;
+$largeScreen: em(860) !default;
+
+$table-borderColor: $base-borderColor;
+$table-border: 1px solid $table-borderColor;
+$table-background: $base-backgroundColor;
+$table-headerBackground: lighten($table-background, 10);
+$table-hoverBackground: darken($table-background, 2);
+$table-stripeBackground: darken($table-background, 4);
+$table-stripeBackground--hover: darken($table-stripeBackground, 5);
+$table-padding: .75em 1em;
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+
+    th {
+        text-align: left;
+    }
+
+    td {
+        line-height: $base-lineHeight;
+    }
+
+    tbody {
+        tr:hover > td, tr:hover > th {
+            background-color: $table-hoverBackground;
+        }
+        tr:first-child td {
+            border-top: 2px solid $table-borderColor;
+        }
+    }
+
+    thead {
+        th {
+            background-color: $table-headerBackground;
+            border-bottom: 0;
+            padding: $table-padding;
+        }
+    }
+
+    tbody {
+        background-color: $table-background;
+
+        td {
+            border-bottom: 0;
+            border-top: 1px solid $table-borderColor;
+            padding: $table-padding;
+        }
+    }
+}
