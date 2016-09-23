@@ -8,7 +8,7 @@ $base-accentColor: #477DCA !default;
 $base-linkColor: $base-accentColor !default;
 $base-fontColor: $darkGray !default;
 $base-fontSize: .8em !default;
-$base-gutter: 0 !default;
+$gutter: 0 !default;
 $medium-screen: em(640) !default;
 $large-screen: em(860) !default;
 
@@ -50,7 +50,7 @@ $LocalTasks-mode: $medium-screen !default;
             color: $LocalTasks-linkColor;
             display: block;
             font-weight: 400;
-            padding: ($base-spacing / 2) $base-gutter;
+            padding: ($base-spacing / 2) $gutter;
             text-decoration: none;
 
             @include media($LocalTasks-mode) {
