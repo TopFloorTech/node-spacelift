@@ -1,0 +1,10 @@
+@import "neat/neat-helpers";
+
+// Neat Breakpoints
+$medium-screen: 600px !default;
+$large-screen: 900px !default;
+
+$medium-screen-up: new-breakpoint(min-width $medium-screen 4) !default;
+$large-screen-up: new-breakpoint(min-width $large-screen 8) !default;
+
+@import "neat";

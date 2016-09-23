@@ -1,0 +1,35 @@
+// Clone Drupal's visualization utility classes
+.u-visuallyHidden {
+    position: absolute !important;
+    clip: rect(1px, 1px, 1px, 1px);
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    word-wrap: normal;
+}
+
+/**
+ * The .focusable class extends the .visually-hidden class to allow
+ * the element to be focusable when navigated to via the keyboard.
+ */
+.u-focusable {
+    &:active,
+    &:focus {
+        position: static !important;
+        clip: auto;
+        overflow: visible;
+        height: auto;
+        width: auto;
+    }
+}
+
+.u-hidden {
+    display: none;
+}
+
+/**
+ * Hide visually and from screen readers, but maintain layout.
+ */
+.u-invisible {
+    visibility: hidden;
+}

@@ -1,0 +1,43 @@
+$sidebar-cols: 4 !default;
+$sidebar-cols--two-sidebars: 3 !default;
+$content-cols: 12 !default;
+$content-cols--one-sidebar: 8 !default;
+$content-cols--two-sidebars: 6 !default;
+
+.l_section {
+    .l_section__container {
+        @include outer-container;
+    }
+}
+
+.outer-wrapper {
+    @include outer-container;
+}
+
+.l_sidebar {
+    .one-sidebar & {
+        @include span-columns($sidebar-cols);
+    }
+
+    .two-sidebars & {
+        @include span-columns($sidebar-cols--two-sidebars);
+    }
+}
+
+.l_content {
+    .no-sidebars & {
+        @include span-columns($content-cols);
+    }
+
+    .one-sidebar & {
+        @include span-columns($content-cols--one-sidebar);
+    }
+
+    .two-sidebars & {
+        @include span-columns($content-cols--two-sidebars);
+    }
+}
+
+.outer-wrapper {
+    @include outer-container;
+}
