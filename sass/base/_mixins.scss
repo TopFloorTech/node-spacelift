@@ -38,3 +38,29 @@ $message-border-radius: $base-border-radius !default;
         }
     }
 }
+
+@mixin centered($direction: 'x') {
+    position: relative;
+
+    $transform: none;
+
+    @if $direction == 'horizontal' or $direction == 'X' or $direction == 'x' {
+        $direction: 'x';
+        $transform: translateX(-50%);
+    } @else if $direction == 'vertical' or $direction == 'Y' or $direction == 'y' {
+        $direction: 'y';
+        $transform: translateY(-50%);
+    } @else if $direction == 'both' {
+        $transform: translate(-50%, -50%);
+    }
+
+    @if $direction == 'x' or $direction == 'both' {
+        left: 50%;
+    }
+
+    @if $direction == 'y' or $direction == 'both' {
+        top: 50%;
+    }
+
+    transform: $transform;
+}
