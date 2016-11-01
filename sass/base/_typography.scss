@@ -15,13 +15,17 @@ $heading-fontSize--h3: 1.8em !default;
 $heading-fontSize--h4: 1.6em !default;
 $heading-fontSize--h5: 1.4em !default;
 $heading-fontSize--h6: 1.2em !default;
+$base-fontWeight: 400 !default;
+$thin-fontWeight: 200 !default;
+$bold-fontWeight: 600 !default;
 
 body {
-  color: $base-fontColor;
-  font-family: $base-fontFamily;
-  font-feature-settings: "kern", "liga", "pnum";
-  font-size: $base-fontSize;
-  line-height: $base-lineHeight;
+    color: $base-fontColor;
+    font-family: $base-fontFamily;
+    font-feature-settings: "kern", "liga", "pnum";
+    font-size: $base-fontSize;
+    line-height: $base-lineHeight;
+    font-weight: $base-fontWeight;
 }
 
 h1,
@@ -30,59 +34,59 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $heading-fontFamily;
-  line-height: $heading-lineHeight;
-  margin: 0 0 $small-spacing;
-  font-weight: normal;
+    font-family: $heading-fontFamily;
+    line-height: $heading-lineHeight;
+    margin: 0 0 $small-spacing;
+    font-weight: $bold-fontWeight;
 }
 
 h1 {
-  font-size: $heading-fontSize--h1;
+    font-size: $heading-fontSize--h1;
 }
 
 h2 {
-  font-size: $heading-fontSize--h2;
+    font-size: $heading-fontSize--h2;
 }
 
 h3 {
-  font-size: $heading-fontSize--h3;
+    font-size: $heading-fontSize--h3;
 }
 
 h4 {
-  font-size: $heading-fontSize--h4;
+    font-size: $heading-fontSize--h4;
 }
 
 h5 {
-  font-size: $heading-fontSize--h5;
+    font-size: $heading-fontSize--h5;
 }
 
 h6 {
-  font-size: $heading-fontSize--h6;
+    font-size: $heading-fontSize--h6;
 }
 
 p {
-  margin: 0 0 $small-spacing;
+    margin: 0 0 $small-spacing;
 }
 
 a {
-  color: $action-color;
-  text-decoration: none;
-  transition: color $base-duration $base-timing;
+    color: $action-color;
+    text-decoration: none;
+    transition: color $base-duration $base-timing;
 
-  &:active,
-  &:focus,
-  &:hover {
-    color: shade($action-color, 25%);
-  }
+    &:active,
+    &:focus,
+    &:hover {
+        color: shade($action-color, 25%);
+    }
 }
 
 hr {
-  @include border($side: bottom, $clear: true);
-  margin: $base-spacing 0;
+    @include border($side: bottom, $clear: true);
+    margin: $base-spacing 0;
 }
 
 img,
 picture {
-  margin: 0;
-  max-width: 100%;
+    margin: 0;
+    max-width: 100%;
 }
