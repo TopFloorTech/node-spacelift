@@ -1,35 +1,36 @@
-$sidebar-cols: 4 !default;
-$sidebar-cols--two-sidebars: 3 !default;
-$content-cols: 12 !default;
-$content-cols--one-sidebar: 8 !default;
-$content-cols--two-sidebars: 6 !default;
+// Base variables
+$columns-sidebar: 4 !default;
+$columns-sidebar--twoSidebars: 3 !default;
+$columns-content: 12 !default;
+$columns-content--oneSidebar: 8 !default;
+$columns-content--twoSidebars: 6 !default;
 
-.l-Section {
-    .l-Section-container {
+.PageSection {
+    .PageSection-container {
         @include outer-container;
     }
 }
 
-.l-Section--sidebar {
+.PageSection--sidebar {
     .one-sidebar & {
-        @include span-columns($sidebar-cols);
+        @include span-columns($columns-sidebar);
     }
 
     .two-sidebars & {
-        @include span-columns($sidebar-cols--two-sidebars);
+        @include span-columns($columns-sidebar--twoSidebars);
     }
 }
 
-.l-Section--content {
+.PageSection--content {
     .no-sidebars & {
-        @include span-columns($content-cols);
+        @include span-columns($columns-content);
     }
 
     .one-sidebar & {
-        @include span-columns($content-cols--one-sidebar);
+        @include span-columns($columns-content--oneSidebar);
     }
 
     .two-sidebars & {
-        @include span-columns($content-cols--two-sidebars);
+        @include span-columns($columns-content--twoSidebars);
     }
 }

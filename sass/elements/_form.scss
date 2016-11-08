@@ -1,0 +1,111 @@
+// Base variables
+$color-action: blue !default;
+$color-background: white !default;
+$color-background--alternate: #eee !default;
+$borderRadius-base: 0 !default;
+$spacing-small: 0.1em !default;
+$spacing-base: 0.5em !default;
+$fontFamily-base: sans-serif !default;
+$fontSize-base: 1em !default;
+$duration-base: 150ms !default;
+$timing-base: ease !default;
+$borderColor-base: black !default;
+$fontWeight-bold: 600 !default;
+
+// Element variables
+$boxShadow-form: none !default;
+$boxShadow-form--focus: $boxShadow-form !default;
+$color-input: $color-action !default;
+$fontWeight-label: $fontWeight-bold !default;
+
+fieldset {
+    background-color: $color-background--alternate;
+    @include border();
+    margin: 0 0 $spacing-small;
+    padding: $spacing-base;
+}
+
+input,
+label,
+select {
+    display: block;
+    font-family: $fontFamily-base;
+    font-size: $fontSize-base;
+}
+
+label {
+    font-weight: $fontWeight-label;
+    margin-bottom: $spacing-small / 2;
+
+    &.required::after {
+        content: "*";
+    }
+
+    abbr {
+        display: none;
+    }
+}
+
+#{$all-text-inputs},
+select[multiple=multiple] {
+    background-color: $color-background;
+    @include border();
+    border-radius: $borderRadius-base;
+    box-shadow: $boxShadow-form;
+    box-sizing: border-box;
+    font-family: $fontFamily-base;
+    font-size: $fontSize-base;
+    margin-bottom: $spacing-small;
+    padding: $spacing-base / 3;
+    transition: border-color $duration-base $timing-base;
+    width: 100%;
+    color: $color-input;
+
+    &:hover {
+        border-color: shade($borderColor-base, 20%);
+    }
+
+    &:focus {
+        border-color: $color-action;
+        box-shadow: $boxShadow-form--focus;
+        outline: none;
+    }
+
+    &:disabled {
+        background-color: shade($color-background, 5%);
+        cursor: not-allowed;
+
+        &:hover {
+            @include border();
+        }
+    }
+}
+
+textarea {
+    resize: vertical;
+}
+
+input[type="search"] {
+    appearance: none;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    display: inline;
+    margin-right: $spacing-small / 2;
+
+    + label {
+        display: inline-block;
+    }
+}
+
+input[type="file"] {
+    margin-bottom: $spacing-small;
+    width: 100%;
+}
+
+select {
+    margin-bottom: $spacing-base;
+    max-width: 100%;
+    width: auto;
+}

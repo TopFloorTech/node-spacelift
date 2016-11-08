@@ -1,0 +1,74 @@
+$darkGray: #333 !default;
+$lightGray: #DDD !default;
+$color-background: white !default;
+$base-lineHeight: 1.5em !default;
+$spacing-small: 0 !default;
+$borderColor-base: black !default;
+$medium-screen: em(640) !default;
+$large-screen: em(860) !default;
+$borderWidth-base: 1px !default;
+$borderStyle-base: solid !default;
+
+// Element properties
+$borderColor-table: $borderColor-base !default;
+$borderWidth-table: $borderWidth-base !default;
+$borderStyle-table: $borderStyle-base !default;
+$color-table: $color-background !default;
+$color-tableHeader: lighten($color-table, 10) !default;
+$color-tableHover: darken($color-table, 2) !default;
+$color-tableStripe: darken($color-table, 4) !default;
+$color-tableStripe--hover: darken($color-tableStripe, 5) !default;
+$table-padding: .75em 1em !default;
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-feature-settings: "kern", "liga", "tnum";
+    margin: $spacing-small 0;
+    table-layout: fixed;
+
+    th {
+        text-align: left;
+        border-bottom: 1px solid shade($borderColor-base, 25%);
+        font-weight: 600;
+        padding: $spacing-small 0;
+    }
+
+    td {
+        @include border($side: bottom);
+        line-height: $base-lineHeight;
+        padding: $spacing-small 0;
+    }
+
+    tr, td, th {
+        vertical-align: middle;
+    }
+
+    tbody {
+        tr:hover > td, tr:hover > th {
+            background-color: $color-tableHover;
+        }
+        tr:first-child td {
+            border-top: 2px $borderStyle-table $borderColor-table;
+        }
+    }
+
+    thead {
+        th {
+            background-color: $color-tableHeader;
+            border-bottom: 0;
+            padding: $table-padding;
+        }
+    }
+
+    tbody {
+        background-color: $color-table;
+
+        td {
+            border-bottom: 0;
+            border-top: $borderWidth-table $borderStyle-table $borderColor-table;
+            padding: $table-padding;
+        }
+    }
+}

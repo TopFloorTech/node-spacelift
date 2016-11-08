@@ -8,10 +8,6 @@
     word-wrap: normal;
 }
 
-/**
- * The .focusable class extends the .visually-hidden class to allow
- * the element to be focusable when navigated to via the keyboard.
- */
 .u-focusable {
     &:active,
     &:focus {
@@ -27,9 +23,7 @@
     display: none;
 }
 
-/**
- * Hide visually and from screen readers, but maintain layout.
- */
+// Hide visually and from screen readers, but maintain layout.
 .u-invisible {
     visibility: hidden;
 }

@@ -1,31 +1,32 @@
-$base-fontColor: black !default;
-$base-fontFamily: sans-serif !default;
-$base-fontSize: 1em !default;
-$base-lineHeight: 1.4em !default;
-$base-duration: 150ms !default;
-$base-timing: ease !default;
-$base-spacing: 1em !default;
-$heading-fontFamily: $base-fontFamily !default;
-$heading-lineHeight: $base-lineHeight !default;
-$small-spacing: 0.1em !default;
-$action-color: blue !default;
-$heading-fontSize--h1: 2.2em !default;
-$heading-fontSize--h2: 2.0em !default;
-$heading-fontSize--h3: 1.8em !default;
-$heading-fontSize--h4: 1.6em !default;
-$heading-fontSize--h5: 1.4em !default;
-$heading-fontSize--h6: 1.2em !default;
-$base-fontWeight: 400 !default;
-$thin-fontWeight: 200 !default;
-$bold-fontWeight: 600 !default;
+// Base variables
+$fontColor-base: black !default;
+$fontFamily-base: sans-serif !default;
+$fontSize-base: 1em !default;
+$lineHeight-base: 1.4em !default;
+$duration-base: 150ms !default;
+$timing-base: ease !default;
+$spacing-base: 1em !default;
+$fontFamily-heading: $fontFamily-base !default;
+$lineHeight-heading: $lineHeight-base !default;
+$spacing-small: 0.1em !default;
+$color-action: blue !default;
+$fontSize-h1: 2.2em !default;
+$fontSize-h2: 2.0em !default;
+$fontSize-h3: 1.8em !default;
+$fontSize-h4: 1.6em !default;
+$fontSize-h5: 1.4em !default;
+$fontSize-h6: 1.2em !default;
+$fontWeight-base: 400 !default;
+$fontWeight-thin: 200 !default;
+$fontWeight-bold: 600 !default;
 
 body {
-    color: $base-fontColor;
-    font-family: $base-fontFamily;
+    color: $fontColor-base;
+    font-family: $fontFamily-base;
     font-feature-settings: "kern", "liga", "pnum";
-    font-size: $base-fontSize;
-    line-height: $base-lineHeight;
-    font-weight: $base-fontWeight;
+    font-size: $fontSize-base;
+    line-height: $lineHeight-base;
+    font-weight: $fontWeight-base;
 }
 
 h1,
@@ -34,55 +35,55 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: $heading-fontFamily;
-    line-height: $heading-lineHeight;
-    margin: 0 0 $small-spacing;
-    font-weight: $bold-fontWeight;
+    font-family: $fontFamily-heading;
+    line-height: $lineHeight-heading;
+    margin: 0 0 $spacing-small;
+    font-weight: $fontWeight-bold;
 }
 
 h1 {
-    font-size: $heading-fontSize--h1;
+    font-size: $fontSize-h1;
 }
 
 h2 {
-    font-size: $heading-fontSize--h2;
+    font-size: $fontSize-h2;
 }
 
 h3 {
-    font-size: $heading-fontSize--h3;
+    font-size: $fontSize-h3;
 }
 
 h4 {
-    font-size: $heading-fontSize--h4;
+    font-size: $fontSize-h4;
 }
 
 h5 {
-    font-size: $heading-fontSize--h5;
+    font-size: $fontSize-h5;
 }
 
 h6 {
-    font-size: $heading-fontSize--h6;
+    font-size: $fontSize-h6;
 }
 
 p {
-    margin: 0 0 $small-spacing;
+    margin: 0 0 $spacing-small;
 }
 
 a {
-    color: $action-color;
+    color: $color-action;
     text-decoration: none;
-    transition: color $base-duration $base-timing;
+    transition: color $duration-base $timing-base;
 
     &:active,
     &:focus,
     &:hover {
-        color: shade($action-color, 25%);
+        color: shade($color-action, 25%);
     }
 }
 
 hr {
     @include border($side: bottom, $clear: true);
-    margin: $base-spacing 0;
+    margin: $spacing-base 0;
 }
 
 img,
