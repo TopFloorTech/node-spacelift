@@ -9,7 +9,8 @@ $fontFamily-base: sans-serif !default;
 $fontSize-base: 1em !default;
 $duration-base: 150ms !default;
 $timing-base: ease !default;
-$borderColor-base: black !default;
+$color-border: #eee !default;
+$color-border--strong: #555 !default;
 $fontWeight-bold: 600 !default;
 
 // Element variables
@@ -62,7 +63,7 @@ select[multiple=multiple] {
     color: $color-input;
 
     &:hover {
-        border-color: shade($borderColor-base, 20%);
+        border-color: $color-border--strong;
     }
 
     &:focus {
