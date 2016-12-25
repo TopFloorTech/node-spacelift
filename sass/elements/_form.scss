@@ -18,6 +18,8 @@ $boxShadow-form: none !default;
 $boxShadow-form--focus: $boxShadow-form !default;
 $color-input: $color-action !default;
 $fontWeight-label: $fontWeight-bold !default;
+$padding-input: $spacing-base / 3 !default;
+$spacing-input: $spacing-small !default;
 
 fieldset {
     background-color: $color-background--alternate;
@@ -55,8 +57,8 @@ select[multiple=multiple] {
     box-shadow: $boxShadow-form;
     box-sizing: border-box;
     font-family: $fontFamily-base;
-    margin-bottom: $spacing-small;
-    padding: $spacing-base / 3;
+    margin-bottom: $spacing-input;
+    padding: $padding-input;
     transition: border-color $duration-base $timing-base;
     width: 100%;
     color: $color-input;
