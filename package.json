@@ -5,7 +5,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/TopFloorTech/node-spacelift"
+    "url": "https://github.com/bmcclure/node-spacelift"
   },
   "author": {
     "name": "Ben McClure",
