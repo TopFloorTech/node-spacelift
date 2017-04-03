@@ -20,6 +20,7 @@ $color-input: $color-action !default;
 $fontWeight-label: $fontWeight-bold !default;
 $padding-input: $spacing-base / 3 !default;
 $spacing-input: $spacing-small !default;
+$fontSize-input: 16px !default;
 
 fieldset {
     background-color: $color-background--alternate;
@@ -33,7 +34,7 @@ label,
 select {
     display: block;
     font-family: $fontFamily-base;
-    font-size: $fontSize-base;
+    font-size: $fontSize-input;
 }
 
 label {
